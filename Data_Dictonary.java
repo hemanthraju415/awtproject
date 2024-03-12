@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Label;
+import java.awt.TextArea;
 import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -43,6 +44,10 @@ public class Data_Dictonary {
 		columnlabel.setBounds(450, 200, 300, 20);
 		columnlabel.setFont(font);
 
+		Label constraintlabel = new Label("The following are the respected constraints and columns in for the table");
+		constraintlabel.setBounds(120, 270, 550, 30);
+		constraintlabel.setFont(font);
+
 		Choice tables = new Choice();
 		tables.setBounds(120, 230, 100, 75);
 		Choice columns = new Choice();
@@ -57,11 +62,16 @@ public class Data_Dictonary {
 				COLUMN_NAMES.forEach(columns::add);
 			}
 		});
+		TextArea area = new TextArea("S.no\t Column name \t\t Constraint name");
+		area.setBounds(150, 300, 450, 400);
+
 		f.add(mainlabel);
 		f.add(tabellabel);
 		f.add(columnlabel);
 		f.add(tables);
 		f.add(columns);
+		f.add(constraintlabel);
+		f.add(area);
 		f.setSize(800, 800);
 		f.setLayout(null);
 		f.setVisible(true);
